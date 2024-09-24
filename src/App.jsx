@@ -21,6 +21,11 @@ const App = () => {
     setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
   }
 
+  const handleDelNumber = () => {
+    setCurrentNumber(prev => prev.slice(0, -1));
+};
+
+
   const handleSumNumbers = () => {
 
     if(firstNumber === '0'){
@@ -107,7 +112,7 @@ const App = () => {
         <Row>
           <Button label="."/>
           <Button label="c" onClick={handleOnClear}/>
-          <Button label="del"/>
+          <Button label="del" onClick={handleDelNumber}/>
           <Button label="/" onClick={handleDivideNumbers}/>
         </Row>
         <Row>
