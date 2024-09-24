@@ -49,6 +49,20 @@ const App = () => {
 
   }
 
+  const handleMultiNumbers = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('x')
+    }else {
+      const multi = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(multi))
+      setOperation('')
+    }
+
+  }
+
   const handleEquals = () => {
 
     if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
@@ -59,6 +73,9 @@ const App = () => {
           case '-':
             handleMinusNumbers();
             break;
+          case 'x':
+            handleMultiNumbers();
+            break;  
           default: 
             break;
         }
@@ -80,7 +97,7 @@ const App = () => {
           <Button label="7" onClick={() => handleAddNumber('7')}/>
           <Button label="8" onClick={() => handleAddNumber('8')}/>
           <Button label="9" onClick={() => handleAddNumber('9')}/>
-          <Button label="x"/>
+          <Button label="x" onClick={handleMultiNumbers}/>
         </Row>
         <Row>
           <Button label="4" onClick={() => handleAddNumber('4')}/>
