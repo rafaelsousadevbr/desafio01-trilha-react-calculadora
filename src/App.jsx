@@ -42,8 +42,8 @@ const App = () => {
         setCurrentNumber('0')
         setOperation('-')
     }else {
-      const sum = Number(firstNumber) - Number(currentNumber);
-      setCurrentNumber(String(sum))
+      const minus = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(minus))
       setOperation('')
     }
 
