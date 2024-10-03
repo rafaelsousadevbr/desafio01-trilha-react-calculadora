@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 
-import { ButtonContainer } from './styles';
+import { ButtonContainer} from './styles';
 
-const Button = ({label, onClick}) => {
+
+const Button = ({id, label, onClick}) => {
     return (
-      <ButtonContainer onClick={onClick} type="button">
+      <ButtonContainer id={id} onClick={onClick} type="button">
        {label}
       </ButtonContainer>
     );
